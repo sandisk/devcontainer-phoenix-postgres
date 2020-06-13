@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  web:
+    build:
+      dockerfile: Dockerfile  
+      context: .
+    volumes:
+      - ../:/workspace:cached
+    command: sleep infinity
+    ports:
+      - 4000:4000
+    links:
+      - db
+  
+  db:
+    image: postgres
+    restart: unless-stopped
+    ports: 
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    volumes:
+      - /postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:            
