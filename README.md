@@ -5,3 +5,5 @@ Barebones devcontainer for use with [Visual Studio Codespaces](http://online.vis
 - Elixir 1.10
 - Phoenix (latest)
 - PostgreSQL (latest)
+
+Note: Codespaces currently [don't support forwarding Websockets traffic](https://github.com/MicrosoftDocs/vsonline/issues/19).
